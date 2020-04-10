@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">test</string>
+    <string name="app_name">观星智控导购</string>
+    <string name="app_title">光是智慧门店导购</string>
+    <string name="user">用户名</string>
+    <string name="password">密码</string>
+    <string name="title_select_shop">选择门店</string>
+
 </resources>
