@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this,SelectShopActivity.class);
-                Toast.makeText(LoginActivity.this,"你的密码是"+mPassWord+" "+"你的帐号是"+mUserName,Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this,"你的密码是"+mPassWord.getText().toString()+" "+"你的帐号是"+mUserName.getText().toString(),Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });
