@@ -16,6 +16,7 @@
         android:background="@mipmap/selectshop_banner"/>
 
     <ListView
+        android:id="@+id/lv_select_shop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

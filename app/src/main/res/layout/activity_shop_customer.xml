@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    >
+
+    <include
+        android:id="@+id/tou" layout="@layout/title_shop_customer"></include>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:elevation="2dp"
+        android:id="@+id/location"
+        android:layout_below="@+id/tou">
+        <ImageView
+            android:id="@+id/address"
+            android:src="@mipmap/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/address"
+            android:text="@string/app_name"
+            android:textColor="@color/black666"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tv_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/change_blue"/>
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/lv_shop_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location"
+        android:background="#F4F4F4"
+        android:padding="15dp"
+        android:dividerHeight="10dp"
+        android:layout_marginBottom="10dp"
+        ></ListView>
+    <ImageView
+        android:id="@+id/iv_create_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/create_order"
+        android:scaleType="centerInside"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:shadowRadius="3"
+        android:shadowDx="0"
+        android:shadowDy="0"
+
+        android:background="@drawable/circle_shadow"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"/>
+</RelativeLayout>

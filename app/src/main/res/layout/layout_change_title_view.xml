@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/white"
+    android:padding="10dp"
+    android:elevation="2dp"
+    android:id="@+id/location">
+
+    <ImageView
+        android:id="@+id/address"
+        android:src="@mipmap/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/address"
+        android:text="@string/app_name"
+        android:textColor="@color/black666"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/tv_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/change_blue"/>
+</RelativeLayout>

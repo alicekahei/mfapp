@@ -4,5 +4,8 @@
     <string name="user">用户名</string>
     <string name="password">密码</string>
     <string name="title_select_shop">选择门店</string>
+    <string name="title_shop_customer">门店顾客</string>
+    <string name="change">切换</string>
+
 
 </resources>

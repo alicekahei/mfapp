@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:background="@color/change_blue"
+        android:layout_alignParentStart="true"
+        >
+    </View>
+
+    <ImageView
+        android:id="@+id/iv_customer"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:scaleType="centerCrop"
+        android:background="#000"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:layout_toEndOf="@id/iv_customer"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_sex_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男  12"
+            android:textSize="15sp"
+            android:textColor="@color/black666"/>
+        <TextView
+            android:id="@+id/tv_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="门店新客"
+            android:textColor="#0B0B14"
+            android:textSize="11sp"
+            android:background="#E7D001"
+            android:layout_marginLeft="8dp"
+            />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_times_shopping_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:textColor="#999"
+            android:maxLines="1"
+            android:text="来过40次 购物率80%"/>
+        <TextView
+            android:id="@+id/tv_shopping_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black666"
+            android:maxLines="1"
+            android:layout_marginBottom="10dp"
+            android:text="呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1分钟前"
+        android:textColor="#999"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"/>
+
+</RelativeLayout>
