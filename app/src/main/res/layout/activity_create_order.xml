@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#f4f4f4"
-    tools:context="com.first.test.CreateOrderActivity">
+    tools:context="com.first.test.fragment.CreateOrderActivity">
 
     <include layout="@layout/title_create_order"
         android:id="@+id/tou"></include>
@@ -42,36 +42,101 @@
             android:textColor="@color/change_blue"/>
 
     </RelativeLayout>
+
+
     <LinearLayout
+
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/location"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="60dp"
         android:background="#fff"
-        android:layout_margin="15dp"
-        android:padding="20dp"
-        android:layout_below="@+id/location">
+        android:orientation="vertical"
+        >>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="添加商品"
-            android:textSize="16sp"
             android:textColor="#333"
+            android:textSize="16sp"
+            android:layout_margin="20dp"
 
             />
 
-    </LinearLayout>
+        <com.first.test.fragment.AutoFitScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            >
 
+
+            <LinearLayout
+                android:id="@+id/ll_create_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </com.first.test.fragment.AutoFitScrollView>
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_add_blue"
+            android:gravity="center"
+            android:text="+添加"
+            android:textColor="#ff0193fd"
+            android:textSize="16sp"
+            android:layout_margin="20dp"/>
+        <RelativeLayout
+            android:id="@+id/s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="李子园牛奶250ml"
+                android:textSize="16sp"
+                android:textColor="#666"
+                android:padding="13dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textSize="16sp"
+                android:textColor="#FFB342"
+                android:padding="13dp"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:orientation="horizontal"
         android:background="@color/white"
-        android:layout_marginEnd="10dp"
         android:layout_alignParentBottom="true"
         >
 
         <TextView
-            android:id="@+id/tv_cancel"
+            android:id="@+id/tv_clean"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -79,15 +144,9 @@
             android:textSize="20sp"
             android:textColor="@color/black666"
             android:gravity="center"/>
-        <View
-            android:layout_width="0.5dp"
-            android:layout_height="match_parent"
-            android:background="@color/gray"
-            android:paddingTop="1dp"
-            android:paddingBottom="1dp">
-        </View>
+
         <TextView
-            android:id="@+id/tv_confirm"
+            android:id="@+id/tv_create"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

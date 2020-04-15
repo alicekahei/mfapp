@@ -8,20 +8,13 @@ import android.view.View;
 
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.first.test.fragment.CreateOrderActivity;
 import com.first.test.listview.ListAdapterCustomer;
 import com.first.test.widget.CustomDialog;
-
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentSkipListMap;
 
 public class ShopCustomerActivity extends AppCompatActivity {
 
@@ -77,7 +70,7 @@ public class ShopCustomerActivity extends AppCompatActivity {
         mIvCreateOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ShopCustomerActivity.this,CreateOrderActivity.class);
+                Intent intent = new Intent(ShopCustomerActivity.this, CreateOrderActivity.class);
                 startActivity(intent);
             }
         });

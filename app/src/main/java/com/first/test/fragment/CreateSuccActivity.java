@@ -1,14 +1,16 @@
-package com.first.test;
+package com.first.test.fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CreateOrderActivity extends AppCompatActivity {
+import com.first.test.R;
+
+public class CreateSuccActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_order);
+        setContentView(R.layout.activity_create_succ);
     }
 }

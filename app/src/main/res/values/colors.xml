@@ -11,5 +11,7 @@
 
     <color name="title_black">#333</color>
     <color name="black666">#666</color>
+    <color name="bg_list_blue">#F7FCFF</color>
+
 
 </resources>
