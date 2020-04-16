@@ -43,20 +43,132 @@
 
     </RelativeLayout>
 
-
     <LinearLayout
-
-        android:id="@+id/content"
+        android:id="@+id/ll_container_succ"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/location"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="65dp"
+        android:padding="20dp"
         android:background="#fff"
         android:orientation="vertical"
-        >>
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/check_circle"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="成功生成订单！"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:layout_marginStart="5dp"/>
+
+
+
+        </LinearLayout>
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/bg_list_blue">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单:1829331311"
+                android:background="@drawable/order_label"
+                android:paddingStart="10dp"
+                android:paddingEnd="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="2019/12/30 1:21:37"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:textColor="#999"
+                />
+
+
+        </RelativeLayout>
+        <com.first.test.fragment.AutoFitScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+
+
+            >
+            <LinearLayout
+                android:id="@+id/ll_create_order_succ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+        </com.first.test.fragment.AutoFitScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/bg_list_blue"
+            android:layout_marginTop="1dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="总额"
+                android:textSize="16sp"
+                android:textColor="#999"
+                />
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textSize="16sp"
+                android:textColor="#FFB342"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/location"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="65dp"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
 
         <TextView
             android:layout_width="match_parent"
@@ -74,6 +186,8 @@
             android:fillViewport="true"
             android:fadingEdge="none"
             android:overScrollMode="never"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             >
 
 
@@ -95,44 +209,47 @@
             android:gravity="center"
             android:text="+添加"
             android:textColor="#ff0193fd"
+            android:foreground="?selectableItemBackground"
             android:textSize="16sp"
             android:layout_margin="20dp"/>
-        <RelativeLayout
-            android:id="@+id/s"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="李子园牛奶250ml"
-                android:textSize="16sp"
-                android:textColor="#666"
-                android:padding="13dp"
-                />
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/s"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="20dp"-->
+            <!--&gt;-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="李子园牛奶250ml"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textColor="#666"-->
+                <!--android:padding="13dp"-->
+                <!--/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"
-                android:textSize="16sp"
-                android:textColor="#FFB342"
-                android:padding="13dp"
-                android:layout_alignParentEnd="true"
-                />
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="3"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textColor="#FFB342"-->
+                <!--android:padding="13dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--/>-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
 
 
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/ll_bottom"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:orientation="horizontal"
         android:background="@color/white"
         android:layout_alignParentBottom="true"
+        android:visibility="visible"
         >
 
         <TextView
@@ -143,6 +260,7 @@
             android:text="清空"
             android:textSize="20sp"
             android:textColor="@color/black666"
+            android:foreground="?selectableItemBackground"
             android:gravity="center"/>
 
         <TextView
@@ -152,8 +270,30 @@
             android:layout_weight="1"
             android:text="生成订单"
             android:textSize="20sp"
+            android:foreground="?selectableItemBackground"
             android:textColor="#049fff"
             android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_bottom_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/tv_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="继续创建订单"
+            android:textColor="#ff0193fd"
+            android:textSize="18sp"
+
+            />
+
     </LinearLayout>
 
 

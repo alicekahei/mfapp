@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/btn_back"
+        android:id="@+id/iv_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@mipmap/back"
@@ -18,6 +18,7 @@
         />
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="创建订单"
