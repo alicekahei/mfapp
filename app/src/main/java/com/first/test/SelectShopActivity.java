@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -40,13 +41,17 @@ public class SelectShopActivity extends AppCompatActivity {
         shopName.add("梅菜的死奔驰店");
         shopName.add("春天花花有热点");
         mLvShopName = findViewById(R.id.lv_select_shop);
+        //ceshi
+
         mLvShopName.setAdapter(new MyListAdapter(SelectShopActivity.this,shopName));
+
+
 
 
         mLvShopName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SelectShopActivity.this,"click"+i,Toast.LENGTH_SHORT).show();
+                Toast.makeText(SelectShopActivity.this,"click"+shopName.get(i),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SelectShopActivity.this,ShopCustomerActivity.class);
                 startActivity(intent);
                 finish();
@@ -54,9 +59,8 @@ public class SelectShopActivity extends AppCompatActivity {
         });
 
 
-
-
-
     }
+
+
 
 }

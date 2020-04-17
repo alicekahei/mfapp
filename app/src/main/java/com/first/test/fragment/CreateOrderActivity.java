@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.first.test.R;
 import com.first.test.ShopCustomerActivity;
+import com.first.test.widget.CustomDialog2;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,8 +31,9 @@ public class CreateOrderActivity extends AppCompatActivity {
 //    private CreateFragment mCreateFragment;
 //    private CreateSuccFragment mCreateSuccFragment;
     private LinearLayout mLlCreateOrder, mLlCreateOrderSucc, mLlContainer, mLlContainerSucc, mLlBottom, mLlBottom2;
-    private TextView mTvClean, mTvCreate, mTvTotal, mTvContinue, mTvTitle;
+    private TextView mTvClean, mTvCreate, mTvTotal, mTvContinue, mTvTitle,mTvChange;
     private ImageView mIvback;
+    private List<String> shopName = new LinkedList<>();
 
     private List<Integer> mListTotal = new LinkedList<>();
     private int mTotal;
@@ -132,6 +134,43 @@ public class CreateOrderActivity extends AppCompatActivity {
                 finish();
             }
         });
+        //数据放入
+
+        shopName.add("黄龙时代广场店");
+        shopName.add("双光心存店");
+        shopName.add("梅菜的死奔驰店");
+        shopName.add("春天花花有热点");
+        //切换门店
+        mTvChange = findViewById(R.id.tv_change);
+        mTvChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomDialog2 customDialog = new CustomDialog2(CreateOrderActivity.this,R.style.MyCustDialog,shopName);
+
+                customDialog.setTitle("选择门店").setCancel("关闭", new CustomDialog2.IOnCancelListener() {
+                    @Override
+                    public void OnCancel(CustomDialog2 customDialog2) {
+
+                    }
+                }).show();
+
+
+
+
+
+
+//                mLvShopName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                        Toast.makeText(ShopCustomerActivity.this,"click"+shopName.get(i),Toast.LENGTH_SHORT).show();
+//
+//                    }
+//
+//                });
+            }
+        });
+
+
 
     }
 
@@ -212,8 +251,8 @@ public class CreateOrderActivity extends AppCompatActivity {
         relativeLayout_succ.addView(tv_money_succ, tvMoneyParams_succ);
         mLlCreateOrderSucc.addView(relativeLayout_succ, -1);
 
-
     }
+
 
 }
     /**

@@ -19,7 +19,7 @@ public class MyListAdapter extends BaseAdapter {
     private Context mContext;
 
 
-    public MyListAdapter (Context context,List<String> list){
+    public MyListAdapter(Context context, List<String> list) {
         this.mContext = context;
         shopName = list;
 
@@ -40,31 +40,30 @@ public class MyListAdapter extends BaseAdapter {
         return i;
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         private TextView mTvShopName;
 
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder holder= null;
+        ViewHolder holder = null;
         if (view == null) {
 
             holder = new ViewHolder();
-            view = LayoutInflater.from(mContext).inflate(R.layout.layout_shop_list,null);
+            view = LayoutInflater.from(mContext).inflate(R.layout.layout_shop_list, null);
             holder.mTvShopName = view.findViewById(R.id.tv_shop_name);
 
             view.setTag(holder);
-        }else {
+        } else {
             holder = (ViewHolder) view.getTag();
         }
 
-           holder.mTvShopName.setText(shopName.get(i));
-
-
+        holder.mTvShopName.setText(shopName.get(i));
 
 
         return view;
 
     }
+
 }

@@ -14,15 +14,21 @@ import android.widget.Toast;
 
 import com.first.test.fragment.CreateOrderActivity;
 import com.first.test.listview.ListAdapterCustomer;
-import com.first.test.widget.CustomDialog;
+import com.first.test.listview.MyListAdapter;
+
+import com.first.test.widget.CustomDialog2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShopCustomerActivity extends AppCompatActivity {
 
     private ImageView mBtnExit;
-    private ListView mshopCustomer;
+    private ListView mshopCustomer,mLvShopName;
     private TextView mTvChange;
     private ImageView mIvCreateOrder;
 
+    private List<String> shopName = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +59,40 @@ public class ShopCustomerActivity extends AppCompatActivity {
             }
         });
 
+
+
+        //数据放入
+        shopName.add("黄龙时代广场店");
+        shopName.add("双光心存店");
+        shopName.add("梅菜的死奔驰店");
+        shopName.add("春天花花有热点");
         //切换门店
         mTvChange = findViewById(R.id.tv_change);
         mTvChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomDialog customDialog = new CustomDialog(ShopCustomerActivity.this);
+                CustomDialog2 customDialog = new CustomDialog2(ShopCustomerActivity.this,R.style.MyCustDialog,shopName);
 
-                customDialog.show();
+                customDialog.setTitle("选择门店").setCancel("关闭", new CustomDialog2.IOnCancelListener() {
+                    @Override
+                    public void OnCancel(CustomDialog2 customDialog2) {
+
+                    }
+                }).show();
+
+
+
+
+
+
+//                mLvShopName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                        Toast.makeText(ShopCustomerActivity.this,"click"+shopName.get(i),Toast.LENGTH_SHORT).show();
+//
+//                    }
+//
+//                });
             }
         });
 
