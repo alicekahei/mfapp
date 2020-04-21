@@ -1,21 +1,13 @@
 package com.first.test.webceshi;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -26,9 +18,9 @@ public class WebCeShi extends AppCompatActivity {
 
 
 
-//    public static void main(String[] args) {
-//        final String url = "https:retail-proxy.yipiaoyun.cn/";
-//        //get请求
+    public static void main(String[] args) {
+        final String url = "https:retail-proxy.yipiaoyun.cn/";
+        //get请求
 ////        OkHttpClient client = new OkHttpClient();
 ////        //创建一个request
 ////        final Request request = new Request.Builder()
@@ -75,30 +67,31 @@ public class WebCeShi extends AppCompatActivity {
 ////            });
 //
 //
-////        //post请求
-//        OkHttpClient client = new OkHttpClient();
-//        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), "{\"nick\":\"jinfang\",\"password\":\"123456\"}");
-//        Request request = new Request.Builder()
-//                .post(body)
-//                .url(url+"app/users/login")
-//                .build();
-//        client.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                String str = response.body().string();
-//                //使用gson
-//
-//                Gson gson =new Gson();
-//
-//
-//                System.out.println(str);
-//            }
-//        });
+//        //post请求
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), "{\"nick\":\"jinfang\",\"password\":\"123456\"}");
+        final Request request = new Request.Builder()
+                .post(body)
+                .url(url+"app/users/login")
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String str = response.body().string();
+                //使用gson
+                System.out.println(str);
+                Gson gson =new Gson();
+                BaseResponse baseRequest = gson.fromJson(str, BaseResponse.class);
+
+                System.out.println(baseRequest);
+                System.out.println(baseRequest.getValue().getToken());
+            }
+        });
 //
 //
 //        //post方法2
@@ -130,7 +123,7 @@ public class WebCeShi extends AppCompatActivity {
 //
 //
 //
-//    }
+   }
 
 }
 

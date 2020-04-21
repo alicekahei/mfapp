@@ -6,13 +6,117 @@
     android:background="#f4f4f4">
 
     <include layout="@layout/title_customer_detail"></include>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@color/white">
+
+
+
+        <ImageView
+            android:id="@+id/iv_customer"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerCrop"
+            android:background="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_toEndOf="@id/iv_customer"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_sex_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男  12"
+                    android:textSize="15sp"
+                    android:textColor="@color/black666"/>
+                <TextView
+                    android:id="@+id/tv_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="门店新客"
+                    android:textColor="#0B0B14"
+                    android:textSize="11sp"
+                    android:background="#E7D001"
+                    android:layout_marginLeft="8dp"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_times_shopping_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:textColor="#999"
+                android:maxLines="1"
+                android:text="来过40次 购物率80%"/>
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1分钟前"
+            android:textColor="#999"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="27dp"
+            />
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:layout_marginTop="7dp"
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="常购商品"
+            android:textColor="#ff333333"
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="清风3层240抽纸巾 x 2"
+            android:textColor="#ff666666"
+            android:layout_marginTop="6dp"
+            android:textSize="15sp"/>
+        <View
+            android:id="@+id/dotted_line"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_dotted_line"
+            android:layerType="software"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="进店统计"
+            android:textColor="#ff333333"
+            android:textSize="16sp"/>
+
+
 
 
     </LinearLayout>

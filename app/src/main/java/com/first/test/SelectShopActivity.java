@@ -33,6 +33,7 @@ public class SelectShopActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SelectShopActivity.this,LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

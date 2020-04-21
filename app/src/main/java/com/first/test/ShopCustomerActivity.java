@@ -42,6 +42,7 @@ public class ShopCustomerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ShopCustomerActivity.this,LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         //
