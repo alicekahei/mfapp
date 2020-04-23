@@ -3,6 +3,7 @@ package com.first.test.fragment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -18,11 +19,21 @@ import android.widget.TextView;
 
 import com.first.test.R;
 import com.first.test.ShopCustomerActivity;
+import com.first.test.webceshi.ResponseShop;
 import com.first.test.widget.CustomDialog2;
+import com.google.gson.Gson;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 public class CreateOrderActivity extends AppCompatActivity {
@@ -31,12 +42,17 @@ public class CreateOrderActivity extends AppCompatActivity {
 //    private CreateFragment mCreateFragment;
 //    private CreateSuccFragment mCreateSuccFragment;
     private LinearLayout mLlCreateOrder, mLlCreateOrderSucc, mLlContainer, mLlContainerSucc, mLlBottom, mLlBottom2;
-    private TextView mTvClean, mTvCreate, mTvTotal, mTvContinue, mTvTitle,mTvChange;
+    private TextView mTvClean, mTvCreate, mTvTotal, mTvContinue, mTvTitle,mTvChange,mTvShopName;
     private ImageView mIvback;
-    private List<String> shopName = new LinkedList<>();
+
+    private List<ResponseShop.ValueShop> mShopName = new ArrayList<>();
 
     private List<Integer> mListTotal = new LinkedList<>();
     private int mTotal;
+
+    private String mToken,mShopId,mStrShopName;
+
+    private SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,42 +150,111 @@ public class CreateOrderActivity extends AppCompatActivity {
                 finish();
             }
         });
-        //数据放入
 
-        shopName.add("黄龙时代广场店");
-        shopName.add("双光心存店");
-        shopName.add("梅菜的死奔驰店");
-        shopName.add("春天花花有热点");
+        //
+        mSharedPreferences = getSharedPreferences("data",MODE_PRIVATE);
+
+        mToken =  mSharedPreferences.getString("token","");
+        mShopId = mSharedPreferences.getString("shopId","");
+        mStrShopName = mSharedPreferences.getString("shopName","");
+
+        mTvShopName =findViewById(R.id.tv_shop_name);
+
+
         //切换门店
         mTvChange = findViewById(R.id.tv_change);
+        mTvShopName = findViewById(R.id.tv_shop_name);
+        mTvShopName.setText(mStrShopName);
         mTvChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomDialog2 customDialog = new CustomDialog2(CreateOrderActivity.this,R.style.MyCustDialog,shopName);
 
-                customDialog.setTitle("选择门店").setCancel("关闭", new CustomDialog2.IOnCancelListener() {
+
+                //获取门店列表
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .get()
+                        .url("https:retail-proxy.yipiaoyun.cn/app/shops/list")
+                        .header("Authorization", mToken)
+                        .build();
+                Call call = client.newCall(request);
+                call.enqueue(new Callback() {
                     @Override
-                    public void OnCancel(CustomDialog2 customDialog2) {
+                    public void onFailure(Call call, IOException e) {
+                        System.out.println("shibai");
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        final String res = response.body().string();
+                        System.out.println(res);
+                        Gson gson = new Gson();
+                        ResponseShop responseShop = gson.fromJson(res, ResponseShop.class);
+
+                        mShopName = responseShop.getValue();
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                CustomDialog2 customDialog = new CustomDialog2(CreateOrderActivity.this, R.style.MyCustDialog, mShopName);
+
+                                customDialog.setTitle("选择门店").setCancel("关闭", new CustomDialog2.IOnCancelListener() {
+                                    @Override
+                                    public void OnCancel(CustomDialog2 customDialog2) {
+
+                                    }
+                                }).show();
+
+
+
+//                                //延迟执行点击
+//                                new Thread(new Runnable() {
+//                                    @Override
+//                                    public void run() {
+//
+//                                        try {
+//                                            Thread.sleep(5000); // 休眠1秒
+//                                        } catch (InterruptedException e) {
+//                                            e.printStackTrace();
+//                                        }
+//
+//                                        mLvShopList = findViewById(R.id.lv_shop_list);
+//                                        mLvShopList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                                            @Override
+//                                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                                                Intent intent = new Intent(ShopCustomerActivity.this,ShopCustomerActivity.class);
+//
+//                                                mSharedPreferences = getSharedPreferences("data",MODE_PRIVATE);
+//                                                mEditor =mSharedPreferences.edit();
+//                                                mEditor.putString("shopId",mShopName.get(i).getShopId());
+//                                                mEditor.putString("shopName",mShopName.get(i).getName());
+//                                                mEditor.apply();
+//                                                startActivity(intent);
+//                                                finish();
+//                                            }
+//
+//                                        });
+//
+//                                    }
+//                                }).start();
+
+
+
+
+                            }
+                        });
+
 
                     }
-                }).show();
+                });
 
 
 
 
 
-
-//                mLvShopName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                        Toast.makeText(ShopCustomerActivity.this,"click"+shopName.get(i),Toast.LENGTH_SHORT).show();
-//
-//                    }
-//
-//                });
             }
         });
-
 
 
     }

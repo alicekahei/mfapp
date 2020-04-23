@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+
+    >
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今天"
+        android:textColor="#ff333333"
+        android:textSize="10sp"/>
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09:26:08  "
+        android:textColor="#ff999999"
+        android:layout_marginStart="20dp"
+        android:textSize="10sp"
+        android:layout_toEndOf="@+id/tv_data"/>
+
+    <TextView
+        android:id="@+id/tv_this_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本店"
+        android:textColor="#ffffffff"
+        android:textSize="10sp"
+        android:background="#E7D001"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_other_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="其它店"
+        android:textColor="#ffffffff"
+        android:textSize="10sp"
+        android:background="#98C9E6"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/v_shop"
+        android:layout_width="3dp"
+        android:layout_height="35dp"
+        android:background="#DCC9B5"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="2dp"
+
+        android:layout_alignLeft="@+id/tv_time"
+        ></View>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_come"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/tv_time"
+        android:layout_toEndOf="@+id/v_shop"
+        android:layout_alignLeft="@+id/tv_time"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="3dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_list_blue"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_icon_shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/icon_shop_0"
+
+            />
+        <TextView
+            android:id="@+id/tv_is_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进店·未消费"
+            android:textColor="#ffdcc9b5"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp"
+
+            android:layout_toEndOf="@+id/iv_icon_shop"/>
+        <TextView
+            android:id="@+id/tv_total_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21min"
+            android:textColor="#ff999999"
+            android:textSize="11sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_order"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/rl_come"
+        android:layout_alignLeft="@+id/rl_come"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_list_blue"
+
+        >
+        <TextView
+            android:id="@+id/tv_order_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="10dp"
+            android:text="订单1: 1276098221"
+            android:textColor="#ff666666"
+            android:textSize="10sp"
+            android:background="#DAEEFF"
+            />
+        <TextView
+            android:id="@+id/tv_order_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/tv_order_num"
+            android:text="农夫山泉500ml…等3件商品"
+            android:textColor="#ff666666"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27.89"
+            android:textColor="#ffffb342"
+            android:textSize="13sp"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_order_1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/rl_order"
+        android:layout_alignLeft="@+id/rl_come"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_list_blue"
+
+
+        >
+        <TextView
+            android:id="@+id/tv_order_num_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="10dp"
+            android:text="订单1: 1276098221"
+            android:textColor="#ff666666"
+            android:textSize="10sp"
+            android:background="#DAEEFF"
+            />
+        <TextView
+            android:id="@+id/tv_order_content_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/tv_order_num_1"
+            android:text="农夫山泉500ml…等3件商品"
+            android:textColor="#ff666666"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27.89"
+            android:textColor="#ffffb342"
+            android:textSize="13sp"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

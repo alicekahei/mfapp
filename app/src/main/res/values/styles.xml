@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="MyCustDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
@@ -17,11 +18,15 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:backgroundDimEnabled">true</item>
-
-
-           
+        <item name="android:backgroundDimEnabled">true</item>   
     </style>
+
+    <style name="this_shop_checkbox_style" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:drawableLeft">@drawable/checkbox_style</item>
+        <item name="android:button">@null</item>
+    </style>
+
+
 
 
 </resources>

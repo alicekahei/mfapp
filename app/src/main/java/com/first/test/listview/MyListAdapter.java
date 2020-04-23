@@ -9,17 +9,21 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.first.test.R;
+import com.first.test.webceshi.ResponseShop;
+import com.first.test.webceshi.Value;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class MyListAdapter extends BaseAdapter {
-    private List<String> shopName = new ArrayList<>();
+    private List<ResponseShop.ValueShop> shopName = new LinkedList<>();
 
     private Context mContext;
 
 
-    public MyListAdapter(Context context, List<String> list) {
+    public MyListAdapter(Context context, List<ResponseShop.ValueShop> list) {
         this.mContext = context;
         shopName = list;
 
@@ -59,7 +63,9 @@ public class MyListAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-        holder.mTvShopName.setText(shopName.get(i));
+
+
+        holder.mTvShopName.setText(shopName.get(i).getName());
 
 
         return view;
